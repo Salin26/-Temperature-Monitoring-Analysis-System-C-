@@ -31,17 +31,17 @@ int main() {
     findZoneWiseAverages(temperatures, zoneAverages);
     printf("\nZone-wise Average Temperatures:\n");
     for (int i = 0; i < ZONES; i++) {
-        printf("Zone %d: %.2f캜\n", i, zoneAverages[i]);
+        printf("Zone %d: %.2f째C\n", i, zoneAverages[i]);
     }
 
     // 3. Find and display peak temperature
     peakTemp = findPeakTemperature(temperatures, &peakZone, &peakHour);
-    printf("\nPeak Temperature: %.2f캜\n", peakTemp);
+    printf("\nPeak Temperature: %.2f째C\n", peakTemp);
     printf("Occurred in Zone %d at Hour %d\n", peakZone, peakHour);
 
     // 4. Detect and display anomalies
     anomalyCount = detectAnomalies(temperatures, 40.0f);
-    printf("\nNumber of anomalies (above 40.0캜): %d\n", anomalyCount);
+    printf("\nNumber of anomalies (above 40.0째C): %d\n", anomalyCount);
 
     // 5. Additional challenge: User interaction for zone trend
     printf("\nEnter a zone number (0-9) to view its temperature trend: ");
@@ -56,7 +56,7 @@ int main() {
     return 0;
 }
 
-// Function to generate random temperature data between 15.0캜 and 45.0캜
+// Function to generate random temperature data between 15.0째C and 45.0째C
 void generateTemperatureData(float data[ZONES][HOURS]) {
     for (int i = 0; i < ZONES; i++) {
         for (int j = 0; j < HOURS; j++) {
@@ -120,7 +120,7 @@ void displayZoneTrend(float data[ZONES][HOURS], int zone) {
     printf("----\t-----------\n");
 
     for (int i = 0; i < HOURS; i++) {
-        printf("%2d\t%6.2f캜\n", i, data[zone][i]);
+        printf("%2d\t%6.2f째C\n", i, data[zone][i]);
     }
 }
 
